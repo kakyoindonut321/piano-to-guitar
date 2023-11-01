@@ -1,0 +1,138 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.guitarneck {
+    width: 1000px;
+    height: 120px;
+    background-color: teal;
+    display: flex;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.nut {
+    width: 10px;
+    height: 120px;
+    background-color: lightgray;
+}
+
+.nutstring {
+    height: 20px;
+    position: relative;
+}
+
+.nutstring::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* Position the line vertically in the   */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Adjust the line's thickness as needed */
+    background-color: #606060;
+    /* Line color */
+}
+
+.fret {
+    display: grid;
+    /* grid-template-columns: auto; */
+    grid-template-columns: none;
+    width: 70px;
+}
+
+#note {
+    height: 20px;
+    margin: 0px;
+    border: none;
+    background-color: burlywood;
+    border-right: 3px solid darkgray;
+    border-radius: 0px;
+    position: relative;
+    /* box-sizing: border-box; */
+}
+
+#note::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* Position the line vertically in the   */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Adjust the line's thickness as needed */
+    background-color: #606060;
+    /* Line color */
+}
+
+#note:hover {
+    border: 2px dashed white;
+}
+
+
+/* keyboard */
+
+.keyboard {
+    display: flex;
+    width: fit-content;
+    /* flex-wrap: wrap; */
+    background-color: gray;
+    padding: 5px;
+}
+
+.octave {
+    display: flex;
+    border: 1px solid black;
+}
+
+.pnote {
+    border: 1px solid black;
+    margin: 0;
+}
+
+.white {
+    width: 3em;
+    height: 6em;
+    margin: 0 0 0 -0.75em;
+    /* margin: 0 0 0 -2em; */
+    background-color: white;
+}
+
+.black {
+    width: 1.5em;
+    height: 3em;
+    margin: 0 0 0 -0.75em;
+    background-color: black;
+    /* border: none; */
+    z-index: 2;
+}
+
+.first {
+    opacity: 0.8;
+}
+
+.notehere {
+    margin: 0;
+}
+
+.pnote:hover {
+    background-color: dodgerblue;
+}
+
+
+/* 
+.elm {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.elm1 {
+}
+
+.elm2 {
+} */
