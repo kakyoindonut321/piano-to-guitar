@@ -37,11 +37,13 @@ const rolletter = [
 
 fretnote.forEach((notes, i) => {
   notes.addEventListener("click", () => {
-    if (notes.style.backgroundColor == "chocolate") {
-      notes.style.backgroundColor = "burlywood";
-    } else {
-      notes.style.backgroundColor = "chocolate";
-    }
+    //   if (notes.style.backgroundColor == "chocolate") {
+    //     notes.style.backgroundColor = "burlywood";
+    //   } else {
+    //     notes.style.backgroundColor = "chocolate";
+    //   }
+    changeGuitar(notes.className);
+    changePiano(notes.className);
   });
   //   notes.textContent = notes.id;
 });
@@ -91,11 +93,13 @@ function fill() {
 
       // eventlisteners
       notes.addEventListener("click", () => {
-        if (notes.style.backgroundColor == "chocolate") {
-          notes.style.backgroundColor = "burlywood";
-        } else {
-          notes.style.backgroundColor = "chocolate";
-        }
+        // if (notes.style.backgroundColor == "chocolate") {
+        //   notes.style.backgroundColor = "burlywood";
+        // } else {
+        //   notes.style.backgroundColor = "chocolate";
+        // }
+        changeGuitar(notes.className);
+        changePiano(notes.className);
       });
 
       //   notes.textContent = notes.id;
@@ -154,4 +158,17 @@ function changeGuitar(classname) {
   });
 }
 
-function changePiano() {}
+function changePiano(id) {
+  let pianote = document.querySelector("#" + id);
+  //   console.log(classname, guitarNote);
+  if (
+    pianote.style.backgroundColor == "dodgerblue" &&
+    pianote.classList.contains("white")
+  ) {
+    pianote.style.backgroundColor = "white";
+  } else if (pianote.style.backgroundColor == "dodgerblue") {
+    pianote.style.backgroundColor = "black";
+  } else {
+    pianote.style.backgroundColor = "dodgerblue";
+  }
+}
