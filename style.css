@@ -5,6 +5,21 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+    height: 100%
+}
+
+body {
+    background: linear-gradient(to bottom, #fff, #eee, #ddd);
+    background-repeat: no-repeat;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .guitarneck {
     width: 1000px;
     height: 120px;
@@ -123,16 +138,22 @@ body {
     background-color: dodgerblue;
 }
 
-
-/* 
-.elm {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
+.ruler {
+    display: flex;
+    width: fit-content;
+    margin-left: 10px;
+    /* border: 1px solid black; */
 }
 
-.elm1 {
+.fretnum {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    /* box-sizing: border-box; */
+    width: 70px;
+    font-size: 22px;
 }
 
-.elm2 {
-} */
+p {
+    margin: 0;
+}

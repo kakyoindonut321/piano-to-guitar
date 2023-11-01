@@ -172,3 +172,31 @@ function changePiano(id) {
     pianote.style.backgroundColor = "dodgerblue";
   }
 }
+
+// ruler
+const fretnum = document.querySelector(".fretnum");
+const ruler = document.querySelector(".ruler");
+
+function rule() {
+  let newfrets;
+  let afterfret;
+  for (let p = 0; p < fretCount - 1; p++) {
+    newfrets = newfrets ? afterfret : fretnum.cloneNode(true);
+    if (newfrets.style.width != "") {
+      let newValue = parseInt(afterfret.style.width) / Math.pow(2, 1 / 12);
+      let newFont = parseFloat(afterfret.style.fontSize) / 1.03;
+      newfrets.style.width = newValue + "px";
+      newfrets.style.fontSize = newFont + "px";
+    } else {
+      newfrets.style.width = initwidth / Math.pow(2, 1 / 12) + "px";
+      newfrets.style.fontSize = 20 / 1.03 + "px";
+    }
+
+    newfrets.textContent = parseInt(newfrets.textContent) + 1;
+
+    ruler.appendChild(newfrets);
+    afterfret = newfrets.cloneNode(true);
+  }
+}
+
+rule();
